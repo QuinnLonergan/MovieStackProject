@@ -1,24 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react'
+import Login from './Login';
+import Header from './Header';
+import Main from './Main';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from "@mui/material/CssBaseline";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [light, setLight] = useState(true)
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
+  const lightTheme = createTheme({
+    palette: {
+      background: {
+        default: "#e4f0e2"
+      }
+    }
+  });
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  if (!user) return <Login onLogin={setUser} />;
+
+
   return (
+    <ThemeProvider theme={light ? lightTheme : darkTheme}>
+    <CssBaseline />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header setUser={setUser} setLight={setLight} light={light}/>
+        <Main />
     </div>
+    </ThemeProvider>
   );
 }
 

@@ -16,6 +16,8 @@ function App() {
 
   const apiKey = (process.env.REACT_APP_OMDB_API_KEY)
 
+  console.log(apiKey)
+
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',

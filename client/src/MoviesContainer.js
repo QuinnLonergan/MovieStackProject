@@ -1,79 +1,177 @@
 import MovieCard from "./MovieCard"
 import {useState, useEffect} from 'react'
-import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import { Typography } from "@mui/material";
+import Button from '@mui/material/Button';
+import { CardHeader, CardMedia } from "@mui/material";
 import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import InvitePage from './InvitePage';
+import Typography from '@mui/material/Typography'
+import { useParams } from "react-router-dom";
+import { Paper } from "@mui/material";
 
-function MoviesContainer() {
-    const [movies, setMovies] = useState([]);
+function MoviesContainer({user, apiKey}) {
+    const [matchMovies, setMatchMovies] = useState([]);
     const [renderMovies, setRenderMovies] = useState([]);
     const [currMov, setCurrMov] = useState(0);
-    const apiKey = "";
+    const [stackMovies, setStackMovies] = useState([]);
+    const [votes, setVotes] = useState([])
+    const [usersToCompare, setUsersToCompare] = useState("");
+    const [errors, setErrors] = useState("");
+    const [movPoster, setMovPoster] = useState("");
+    const { id } = useParams();
 
-    useEffect(() => {
-            fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=blart`)
-                .then(res => res.json())
-                .then((movies) => {
-                    setMovies(movies.Search)
-                })
-    }, []);
-
-    console.log(movies)
-    
-    const customMovies = [
-        {Title: "Moonlight"},
-        {Title: "Spider-Man: Into the Spider-Verse"},
-        {Title: "No Country for Old Men"},
-        {Title: "The Dark Knight"},
-        {Title: "Pulp Fiction"},
-        {Title: "Iron Man"},
-        {Title: "Goodfellas"},
-        {Title: "The Shining"},
-        {Title: "Zodiac"},
-        {Title: "Drive"},
-        {Title: "The Thing"},
-        {Title: "Toy Story"},
-        {Title: "Alien"},
-        {Title: "Get Out"},
-        {Title: "Nightcrawler"},
-        {Title: "The Grand Budapest Hotel"},
-        {Title: "The Big Lebowski"},
-        {Title: "The Departed"}
-    ]
 
 
     useEffect(() => {
-        if(movies) {
-        setRenderMovies(customMovies.map(movie => (
+        fetch(`/cardstacks/${id}`)
+          .then(response => response.json())
+          .then(data => setStackMovies(data.movies))
+      }, [])
+
+
+
+    useEffect(() => {
+        if(stackMovies) {
+        setRenderMovies(stackMovies.map(movie => (
             <MovieCard 
-                title={movie.Title}
+                key={movie.id}
+                title={movie.title}
+                movieid={movie.id}
                 currMov={currMov}
                 setCurrMov={setCurrMov}
                 renderMovies={renderMovies}
+                apiKey={apiKey}
             />
         )))}
-    }, [movies, currMov]);
+    }, [stackMovies, currMov]);
+
+
+
+    function returnLikedMovies() {
+        fetch('/votes')
+          .then(response => response.json())
+          .then(data => setVotes(data))
+    }
+
+    // useEffect(() => {
+    //     if (votes.filter(vote => (vote.user.username === usersToCompare))){
+    //         setErrors("User does not exist")
+    //     }
+    // }, [usersToCompare])
+
+
+    useEffect(() => {
+        const doesUserExist = votes.filter(vote => (vote.user.username === usersToCompare))
+        const usersvotes = votes.filter(vote => (vote.user.username === usersToCompare || vote.user.username === user.username))
+        const likedvotes = usersvotes.filter(vote => (vote.liked === true))
+        const likedmovies = likedvotes.map(vote => vote.movie.title)
+
+        console.log(doesUserExist)
+
+
+        const dupMov = likedmovies.filter((c, index) => {
+            return likedmovies.indexOf(c) !== index;
+        });
+
+
+        if (doesUserExist.length > 0 && dupMov.length > 0){
+            const moviearray = (dupMov.map(mov => mov))
+            const singlemovie = moviearray[Math.floor(Math.random()*matchMovies.length)]
+            setMatchMovies(singlemovie)
+        } else if (likedmovies.length > 1 && dupMov.length < 1){
+            setErrors("No Matches")
+        }
+    }, [votes])
+
+    function handleShowAll(){
+        const usersvotes = votes.filter(vote => (vote.user.username === usersToCompare || vote.user.username === user.username))
+        const likedvotes = usersvotes.filter(vote => (vote.liked === true))
+        const likedmovies = likedvotes.map(vote => vote.movie.title)
+        const dupMov = likedmovies.filter((c, index) => {
+            return likedmovies.indexOf(c) !== index;
+        });
+        setMatchMovies(dupMov)
+    }
+
+    function resetVotes(){
+        fetch(`/resetvotes/${user.id}`, {
+            method: 'DELETE',
+            headers: {
+                Accept: 'application/json',
+                "Content-Type": "application/json"
+            }})
+        setCurrMov(0)
+        setMatchMovies([])
+        setUsersToCompare("")
+        setErrors("")
+    }
+
+    useEffect(() => {
+        fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${matchMovies}`)
+            .then(res => res.json())
+            .then((movie) => {
+                setMovPoster(movie.Poster)
+            })
+    }, [matchMovies]);
+
 
 if (renderMovies[currMov]) {
     return(
         <>
-        <h1>{renderMovies[currMov]}</h1>
+        <Box height={800}>{renderMovies[currMov]}</Box>
         </>
     )
-} else return(
-    <Grid sx={{
-        marginTop: 35,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}>
-    <Box sx={{ display: 'flex' }}>
-      <CircularProgress />
-      <Typography> WAITING ON FRIENDS </Typography>
-      <CircularProgress />
-    </Box>
-    </Grid>
+}else if (matchMovies.length > 0){
+    return(
+        <Grid sx={{
+            marginTop: 10,
+            marginBottom: 12,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+        <Box sx={{ boxShadow: 15 }}>
+        <Card variant="outlined" sx={{ maxWidth: 1000, minWidth: 600, minHeight: 500}} >
+            <CardHeader title="YOU SHOULD WATCH:" />
+            <CardContent>
+            {typeof matchMovies === 'string' ? 
+                <>
+                <Paper elevation={0}>
+                    <img src={movPoster} alt="moviePoster"/>
+                </Paper>
+                <h1 key={matchMovies.id}>{matchMovies}</h1>
+                </> : 
+                matchMovies.map(movie => <h1 key={movie.id}>{movie}</h1>)}
+                 <Button variant="contained" size="large" onClick={resetVotes}>
+                NEW SESSION
+                </Button>
+                <Typography variant="body2" color="text.secondary">
+                    OR
+                </Typography>
+                <Button variant="contained" size="large" onClick={handleShowAll}>
+                SEE ALL MATCHES
+                </Button>
+            </CardContent>
+            {/* <CardContent>
+                {matchMovies.map(movie => <h1 key={movie.id}>{movie}</h1>)}
+                <Button variant="contained" size="large" onClick={resetVotes}>
+                NEW SESSION
+                </Button>
+            </CardContent> */}
+        </Card>
+        </Box>
+        </Grid>
+    )
+}else return(
+    <InvitePage 
+        returnLikedMovies={returnLikedMovies}
+        usersToCompare={usersToCompare}
+        setUsersToCompare={setUsersToCompare}
+        errors={errors}
+        resetVotes={resetVotes}
+        />
 )
 }
 

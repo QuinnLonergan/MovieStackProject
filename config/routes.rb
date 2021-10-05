@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :cardstacks
   resources :votes
   resources :movies
-  resources :cardstacks
-  resources :swipesessions
   resources :users
   # resources :users
   # Routing logic: fallback requests for React Router.
+  delete "/resetvotes/:id", to: "votes#destroy_user_votes"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

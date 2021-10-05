@@ -1,4 +1,7 @@
 class Cardstack < ApplicationRecord
-  has_many :movies
-  belongs_to :swipesession
+  belongs_to :user
+  has_many :movies, dependent: :destroy
+
+  validates :name, presence: true
+  validates :name, uniqueness: true
 end

@@ -38,7 +38,7 @@ class CardstacksController < ApplicationController
     end
   
     def cardstack_params
-      params.permit(:id, :name, :swipesession_id)
+      params.permit(:name, :user_id)
     end
   
     def render_not_found_response

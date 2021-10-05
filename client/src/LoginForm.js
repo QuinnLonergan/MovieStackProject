@@ -38,7 +38,6 @@ function LoginForm({ onLogin }) {
 
   return (
     <div>
-      <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -74,6 +73,7 @@ function LoginForm({ onLogin }) {
               margin="normal"
               required
               fullWidth
+              helperText={errors}
               name="password"
               label="Password"
               type="password"
@@ -92,12 +92,11 @@ function LoginForm({ onLogin }) {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
-    <div>
+          {/* <div>
           {errors.map((err) => (
             <p key={err}>{err}</p>
           ))}
-    </div>
+    </div> */}
     </div>
   );
 }

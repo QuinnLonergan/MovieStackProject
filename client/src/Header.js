@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,8 +9,56 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import List from '@mui/material/List';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import Drawer from '@mui/material/Drawer';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
 function Header({setUser, setLight, light}) {
+
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+          <ListItemButton component={Link} to={'/'} key={'Home'}>
+            <ListItemIcon>
+              <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText  primary={'Home'} />
+          </ListItemButton>
+          <ListItemButton component={Link} to={'/custom'} key={'Custom Stacks'}>
+            <ListItemIcon>
+              <LocalMoviesIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Custom Stacks'} />
+          </ListItemButton>
+      </List>
+    </Box>
+  );
+
+
 
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -18,6 +67,8 @@ function Header({setUser, setLight, light}) {
           }
         });
       }
+
+      const anchor = 'left'
 
 
   return (
@@ -30,9 +81,17 @@ function Header({setUser, setLight, light}) {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={toggleDrawer(anchor, true)}
           >
             <MenuIcon />
           </IconButton >
+          <Drawer
+            anchor={anchor}
+            open={state[anchor]}
+            onClose={toggleDrawer(anchor, false)}
+          >
+            {list(anchor)}
+          </Drawer>
           <Typography align='left' variant="h6" component="div" sx={{ flexGrow: 1 }}>
             MovieStack
           </Typography>

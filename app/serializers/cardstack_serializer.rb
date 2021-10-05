@@ -1,4 +1,5 @@
 class CardstackSerializer < ActiveModel::Serializer
   attributes :id, :name
-  has_one :swipesession
+  # has_one :user
+  has_many :movies
 end

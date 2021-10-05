@@ -5,10 +5,16 @@ import Header from './Header';
 import Main from './Main';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
+import Footer from './Footer'
+import Grid from '@mui/material/Grid'
+
+
 
 function App() {
   const [user, setUser] = useState(null);
   const [light, setLight] = useState(true)
+
+  const apiKey = (process.env.REACT_APP_OMDB_API_KEY)
 
   const darkTheme = createTheme({
     palette: {
@@ -38,11 +44,12 @@ function App() {
 
   return (
     <ThemeProvider theme={light ? lightTheme : darkTheme}>
-    <CssBaseline />
-    <div className="App">
-        <Header setUser={setUser} setLight={setLight} light={light}/>
-        <Main />
-    </div>
+      <CssBaseline />
+        <div className="App">
+            <Header setUser={setUser} setLight={setLight} light={light}/>
+            <Main apiKey={apiKey}/>
+        </div>
+          <Footer />
     </ThemeProvider>
   );
 }

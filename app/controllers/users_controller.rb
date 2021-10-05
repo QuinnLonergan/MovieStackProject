@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: :create
 
+    def index
+        users = User.all
+        render json: users
+    end
+
     def create
         user = User.create!(user_params)
         session[:user_id] = user.id 
@@ -8,7 +13,7 @@ class UsersController < ApplicationController
     end
     
     def show
-        render json: @current_user
+        render json: @current_user, include: ['cardstacks', 'cardstacks.movies']
     end
 
     private

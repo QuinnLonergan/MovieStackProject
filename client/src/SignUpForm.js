@@ -45,7 +45,6 @@ function SignUpForm({ onLogin }) {
 
   return (
     <>
-    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -115,7 +114,6 @@ function SignUpForm({ onLogin }) {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
     <div> 
         {errors.map((err) => (
           <p key={err}>{err}</p>

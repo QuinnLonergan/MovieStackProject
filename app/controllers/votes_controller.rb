@@ -29,9 +29,14 @@ class VotesController < ApplicationController
       vote.destroy
       head :no_content
     end
+
+    def destroy_user_votes
+        votes = Vote.all.where(user_id: params[:id])
+        votes.destroy_all
+    end   
   
   
-    private
+    private  
   
     def find_movie
       Vote.find(params[:id])

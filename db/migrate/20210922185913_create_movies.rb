@@ -8,7 +8,6 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :released
       t.string :director
       t.string :awards
-      t.belongs_to :cardstack, null: false, foreign_key: true
 
       t.timestamps
     end

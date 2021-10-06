@@ -118,6 +118,7 @@ function MoviesContainer({user, apiKey}) {
 
 
 if (renderMovies[currMov]) {
+    console.log(renderMovies[currMov])
     return(
         <>
         <Box height={800}>{renderMovies[currMov]}</Box>

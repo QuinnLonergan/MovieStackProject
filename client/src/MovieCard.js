@@ -53,7 +53,7 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
 
     const handleChange = () => {
         setChecked(false);
-        setTimeout(function(){ setChecked(true) }, 300);
+        setTimeout(function(){ setChecked(true) }, 400);
     };
 
     useEffect(() => {
@@ -120,7 +120,7 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
     }
 
 
-    return(
+    if (currentMovie) return(
         <Grid sx={{
             marginTop: 5,
             marginBottom: 5,

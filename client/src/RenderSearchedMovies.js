@@ -29,7 +29,7 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
         .then((stack) => {
                     setCurrentStackMovies(stack.movies)
                 })
-    })
+    }, [rerenderDelete, cardstackId])
 
     function handleAdd(movieTitle, moviePoster){
         fetch('/movies', {
@@ -59,6 +59,7 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
                 "Content-Type": "application/json"
             }
         })
+        setRerenderDelete(rerenderDelete = !rerenderDelete)
     }
 
     if (searchObject.length > 0) {

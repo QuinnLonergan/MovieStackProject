@@ -13,11 +13,12 @@ import List from '@mui/material/List';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
+import { ListSubheader } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
-function Header({setUser, setLight, light}) {
+function Header({user, setUser, setLight, light}) {
 
   const [state, setState] = React.useState({
     top: false,
@@ -41,7 +42,13 @@ function Header({setUser, setLight, light}) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List
+      aria-labelledby="nested-list-subheader"
+      subheader={
+        <ListSubheader component="div" id="nested-list-subheader">
+          {`logged in as: ${user.username}`}
+        </ListSubheader>
+      }>
           <ListItemButton component={Link} to={'/'} key={'Home'}>
             <ListItemIcon>
               <AccountCircleIcon />

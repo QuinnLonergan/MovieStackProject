@@ -147,7 +147,7 @@ if (renderMovies[currMov]) {
                  <Button variant="contained" size="large" onClick={resetVotes}>
                 NEW SESSION
                 </Button>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 1 }}>
                     OR
                 </Typography>
                 <Button variant="contained" size="large" onClick={handleShowAll}>

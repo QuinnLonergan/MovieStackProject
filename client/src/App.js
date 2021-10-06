@@ -48,7 +48,7 @@ function App() {
     <ThemeProvider theme={light ? lightTheme : darkTheme}>
       <CssBaseline />
         <div className="App">
-            <Header setUser={setUser} setLight={setLight} light={light}/>
+            <Header setUser={setUser} user={user} setLight={setLight} light={light}/>
             <Main apiKey={apiKey}/>
         </div>
           <Footer />

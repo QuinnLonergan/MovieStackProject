@@ -6,7 +6,7 @@ function Socials() {
     return (
       <Typography variant="body2" color="text.secondary" align="center">
         <SocialIcon url="https://medium.com/@qui99lo" />
-        <SocialIcon url="https://www.linkedin.com/in/quinn-lonergan-b70512181/" />
+        <SocialIcon url="https://www.linkedin.com/in/quinn-lonergan-b70512181/" style={{marginLeft: 5, marginRight: 5}}/>
         <SocialIcon url="https://github.com/QuinnLonergan" />
       </Typography>
     );

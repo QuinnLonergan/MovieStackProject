@@ -6,8 +6,6 @@ import Main from './Main';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 import Footer from './Footer'
-import Grid from '@mui/material/Grid'
-
 
 
 function App() {

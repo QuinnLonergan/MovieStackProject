@@ -18,8 +18,6 @@ import { SocialIcon } from 'react-social-icons';
 const theme = createTheme();
 
 export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete}) {
-    // const [cardstackName, setCardstackName] = useState('')
-    // const [cardstackId, setCardstackId] = useState(0)
 
 
     function handleSubmit(){

@@ -24,10 +24,6 @@ function Main({apiKey}) {
             })
         }, [rerenderDelete])
 
-    // useEffect(() => {
-    //     console.log(id)
-    // }, [id])
-
 
 
     return(

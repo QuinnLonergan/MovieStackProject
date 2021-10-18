@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import { Button } from '@mui/material';
 import {useState } from 'react'
 import TextField from '@mui/material/TextField';
@@ -22,7 +21,6 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
   return (
       <>
       <main>
-        {/* Hero unit */}
         <Box
           sx={{
             bgcolor: 'background.paper',
@@ -36,7 +34,6 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
               variant="h2"
               align="center"
               color="text.primary"
-            //   gutterBottom
             >
               {`${cardstackName}`}
             </Typography>
@@ -67,7 +64,6 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
               <RenderSearchedMovies 
                 cardstackId={cardstackId} 

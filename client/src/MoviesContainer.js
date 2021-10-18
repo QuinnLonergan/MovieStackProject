@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography'
 import { useParams } from "react-router-dom";
 import { Paper } from "@mui/material";
 
+
 function MoviesContainer({user, apiKey}) {
     const [matchMovies, setMatchMovies] = useState([]);
     const [renderMovies, setRenderMovies] = useState([]);
@@ -21,6 +22,7 @@ function MoviesContainer({user, apiKey}) {
     const [errors, setErrors] = useState("");
     const [movPoster, setMovPoster] = useState("");
     const { id } = useParams();
+    
 
 
 
@@ -54,12 +56,6 @@ function MoviesContainer({user, apiKey}) {
           .then(response => response.json())
           .then(data => setVotes(data))
     }
-
-    // useEffect(() => {
-    //     if (votes.filter(vote => (vote.user.username === usersToCompare))){
-    //         setErrors("User does not exist")
-    //     }
-    // }, [usersToCompare])
 
 
     useEffect(() => {
@@ -120,9 +116,12 @@ function MoviesContainer({user, apiKey}) {
 if (renderMovies[currMov]) {
     console.log(renderMovies[currMov])
     return(
+        
         <>
         <Box height={800}>{renderMovies[currMov]}</Box>
         </>
+        
+        
     )
 }else if (matchMovies.length > 0){
     return(
@@ -155,12 +154,6 @@ if (renderMovies[currMov]) {
                 SEE ALL MATCHES
                 </Button>
             </CardContent>
-            {/* <CardContent>
-                {matchMovies.map(movie => <h1 key={movie.id}>{movie}</h1>)}
-                <Button variant="contained" size="large" onClick={resetVotes}>
-                NEW SESSION
-                </Button>
-            </CardContent> */}
         </Card>
         </Box>
         </Grid>

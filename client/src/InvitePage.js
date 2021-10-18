@@ -51,8 +51,6 @@ function InvitePage({returnLikedMovies, usersToCompare, setUsersToCompare, error
             <CardContent>
             <Button onClick={copy}>{!copied ? "Copy link to this stack" : "Copied!"}</Button>
             </CardContent>
-            {/* <CardContent> */}
-                {/* <Box component="form" noValidate sx={{ mt: 1, width: '30ch' }}> */}
                     <TextField
                     value={usersToCompare}
                     onChange={(e) => setUsersToCompare(e.target.value)}
@@ -81,8 +79,6 @@ function InvitePage({returnLikedMovies, usersToCompare, setUsersToCompare, error
                     <Button variant="contained" size="large" onClick={resetVotes}>
                         NEW SESSION
                     </Button>
-                {/* </Box> */}
-            {/* </CardContent> */}
         </Card>
         </Box>
         </Grid>

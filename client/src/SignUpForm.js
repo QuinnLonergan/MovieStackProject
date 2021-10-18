@@ -17,12 +17,10 @@ function SignUpForm({ onLogin }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
-    // setIsLoading(true);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -34,7 +32,6 @@ function SignUpForm({ onLogin }) {
         password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {
-      // setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {

@@ -12,6 +12,7 @@ This project uses the following technologies:
 - React 17
 - Rails 6.1
 - Ruby Ruby 2.7
+- react-social-icons (npm)
 
 ## Setup
 

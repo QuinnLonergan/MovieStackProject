@@ -23,6 +23,7 @@ export default function CustomStacks() {
       }, [])
 
 
+      console.log(cards)
   return (
       <>
       <main>
@@ -57,6 +58,9 @@ export default function CustomStacks() {
                 <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
                       {card.name}
+                    </Typography>
+                    <Typography gutterBottom variant="h7" component="h2">
+                      {card.user}
                     </Typography>
                   </CardContent>
                   <CardMedia

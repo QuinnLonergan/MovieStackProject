@@ -59,8 +59,8 @@ export default function CustomStacks() {
                     <Typography gutterBottom variant="h5" component="h2">
                       {card.name}
                     </Typography>
-                    <Typography gutterBottom variant="h7" component="h2">
-                      {card.user}
+                    <Typography gutterBottom variant="subtitle1" component="h2">
+                      Created by: {card.user.username}
                     </Typography>
                   </CardContent>
                   <CardMedia

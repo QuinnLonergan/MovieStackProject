@@ -101,7 +101,6 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
         <Card variant="outlined" sx={{ maxWidth: 1000, minWidth: 900, minHeight: 500}} >
             <CardHeader title="Current Movies in Stack:" />
             <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
             {currentStackMovies ? (currentStackMovies.map((card) => (
               <Grid item key={card.id} xs={12} sm={6} md={4}>

@@ -86,7 +86,7 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
                   {isAdded ? (
                         <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster)}}>Add to Stack</Button>
                       ) : (
-                        <button >Out of Stock</button>
+                        <Button size="small" >Added</Button>
                       )}
                   </CardActions>
                 </Card>

@@ -33,6 +33,7 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
     }, [rerenderDelete, cardstackId])
 
     function handleAdd(movieTitle, moviePoster){
+        setIsAdded((isAdded) => (!isAdded))
         fetch('/movies', {
                 method: "POST",
                 headers: {

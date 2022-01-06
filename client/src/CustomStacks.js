@@ -73,7 +73,9 @@ export default function CustomStacks() {
                   </CardActions>
                 </Card>
               </Grid>
-            ))) : <h1>NO CARDS</h1>}
+            ))) : <Typography gutterBottom variant="h5" component="h2">
+            NO CARDS
+          </Typography>}
           </Grid>
         </Container>
       </main>

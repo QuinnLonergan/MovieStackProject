@@ -57,7 +57,6 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
   return (
       <>
       <main>
-        {/* Hero unit */}
         <Box
           sx={{
             bgcolor: 'background.paper',
@@ -106,7 +105,6 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
             {cards ? (cards.map((card) => (
               <Grid item key={card.id} xs={12} sm={6} md={4}>

@@ -14,6 +14,7 @@ import { Container } from "@mui/material";
 export default function RenderSearchResults({ searchObject, cardstackId, rerenderDelete, setRerenderDelete, apiKey }) {
     const [movies, setMovies] = useState([]);
     const [currentStackMovies, setCurrentStackMovies] = useState([])
+    const [isAdded, setIsAdded] = useState(true)
 
     useEffect(() => {
             fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchObject}`)

@@ -83,7 +83,11 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
                     alt={card.Poster}
                   />
                   <CardActions>
-                    <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster)}}>Add to Stack</Button>
+                  {isAdded ? (
+                        <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster)}}>Add to Stack</Button>
+                      ) : (
+                        <button >Out of Stock</button>
+                      )}
                   </CardActions>
                 </Card>
               </Grid>

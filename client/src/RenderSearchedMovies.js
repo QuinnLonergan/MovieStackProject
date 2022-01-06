@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import CardHeader from "@mui/material/CardHeader";
+import SearchedMovies from "./SearchedMovies";
 import { Container } from "@mui/material";
 
 export default function RenderSearchResults({ searchObject, cardstackId, rerenderDelete, setRerenderDelete, apiKey }) {

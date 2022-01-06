@@ -1,4 +1,4 @@
-export default function SearchedMovies({handleAdd}){
+export default function SearchedMovies({handleAdd, movies}){
 
 
     return (

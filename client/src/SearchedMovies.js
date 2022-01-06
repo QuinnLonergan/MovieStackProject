@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 
 
-export default function SearchedMovies({handleAdd, movies}){
+export default function SearchedMovies({handleAdd, movies, isAdded}){
 
 
     return (

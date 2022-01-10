@@ -14,9 +14,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
 import {useState, useEffect} from 'react'
 import { red, green } from '@mui/material/colors';
-import Slide from '@mui/material/Slide'
 import Fade from '@mui/material/Fade';
-import FadeIn from 'react-fade-in';
+
 
 
 

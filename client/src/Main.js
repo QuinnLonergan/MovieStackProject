@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {useState, useEffect} from 'react'
 import AddMovies from "./AddMovies";
 import CustomStacks from "./CustomStacks";
+import GenreStacks from "./GenreStacks";
 
 function Main({apiKey}) {
     const [user, setUser] = useState([])
@@ -56,6 +57,10 @@ function Main({apiKey}) {
 
             <Route exact path="/custom">
                 <CustomStacks/>
+            </Route>
+
+            <Route exact path="/genre">
+                <GenreStacks/>
             </Route>
         </Switch>
         </>

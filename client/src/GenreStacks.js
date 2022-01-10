@@ -23,7 +23,6 @@ export default function CustomStacks() {
       }, [])
 
 
-      console.log(cards)
   return (
       <>
       <main>

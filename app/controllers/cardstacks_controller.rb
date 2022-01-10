@@ -29,6 +29,11 @@ class CardstacksController < ApplicationController
       cardstack.destroy
       head :no_content
     end
+
+    def show_genre
+      cardstacks = Cardstack.where(user_id: 3)
+      render json: cardstacks
+    end
   
   
     private

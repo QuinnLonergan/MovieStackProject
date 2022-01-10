@@ -6,28 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(username: "Frank", password: "frankspassword")
+# User.create!(username: "Frank", password: "frankspassword")
 
-User.create!(username: "Mark", password: "markspassword")
+# User.create!(username: "Mark", password: "markspassword")
 
-puts "user created"
+# puts "user created"
 
-puts "swipesession created"
+# puts "swipesession created"
 
-Cardstack.create!(name: 'MVP cardstack', id:1, user_id:1)
-Cardstack.create!(name: 'Second cardstack', id:2, user_id:1)
+# Cardstack.create!(name: 'MVP cardstack', id:1, user_id:1)
+# Cardstack.create!(name: 'Second cardstack', id:2, user_id:1)
 
-puts "cardstack created"
+# puts "cardstack created"
 
-Movie.create!(title:"The Dark Knight", cardstack_id:1)
-Movie.create!(title:"Moonlight", cardstack_id:1)
-Movie.create!(title:"Drive", cardstack_id:1)
-Movie.create!(title:"Little Women", cardstack_id:1)
-Movie.create!(title:"Get Out", cardstack_id:1)
-Movie.create!(title:"Alien", cardstack_id:2)
-Movie.create!(title:"Goodfellas", cardstack_id:2)
-Movie.create!(title:"Iron Man", cardstack_id:2)
-Movie.create!(title:"Good Will Hunting", cardstack_id:2)
-Movie.create!(title:"Taxi Driver", cardstack_id:2)
+# Movie.create!(title:"The Dark Knight", cardstack_id:1)
+# Movie.create!(title:"Moonlight", cardstack_id:1)
+# Movie.create!(title:"Drive", cardstack_id:1)
+# Movie.create!(title:"Little Women", cardstack_id:1)
+# Movie.create!(title:"Get Out", cardstack_id:1)
+# Movie.create!(title:"Alien", cardstack_id:2)
+# Movie.create!(title:"Goodfellas", cardstack_id:2)
+# Movie.create!(title:"Iron Man", cardstack_id:2)
+# Movie.create!(title:"Good Will Hunting", cardstack_id:2)
+# Movie.create!(title:"Taxi Driver", cardstack_id:2)
 
-puts "movies created"
+# puts "movies created"
+
+User.create!(username: "Admin", password: "14581043")
+
+
+
+

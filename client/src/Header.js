@@ -17,6 +17,7 @@ import { ListSubheader } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
+import MovieIcon from '@mui/icons-material/Movie';
 
 function Header({user, setUser, setLight, light}) {
 
@@ -63,7 +64,7 @@ function Header({user, setUser, setLight, light}) {
           </ListItemButton>
           <ListItemButton component={Link} to={'/genre'} key={'Genre Stacks'}>
             <ListItemIcon>
-              <LocalMoviesIcon />
+              <MovieIcon />
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>

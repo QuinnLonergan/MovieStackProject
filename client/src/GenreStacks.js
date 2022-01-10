@@ -17,7 +17,7 @@ export default function CustomStacks() {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-        fetch(`/cardstacks`)
+        fetch(`/genre`)
           .then(response => response.json())
           .then(data => setCards(data))
       }, [])

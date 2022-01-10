@@ -42,7 +42,7 @@ export default function CustomStacks() {
               color="text.primary"
               gutterBottom
             >
-              Browse other users' custom movie stacks
+              Browse stacks based on Genre
             </Typography>
           </Container>
         </Box>

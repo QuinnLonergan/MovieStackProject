@@ -8,7 +8,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 
 
-export default function SearchedMovies({handleAdd, card, isAdded}){
+export default function SearchedMovies({handleAdd, card}){
+    const [isAdded, setIsAdded] = useState(true)
+
+
     return (
           <Grid item key={card.id} xs={12} sm={6} md={4}>
             <Card
@@ -26,7 +29,7 @@ export default function SearchedMovies({handleAdd, card, isAdded}){
               />
               <CardActions>
               {isAdded ? (
-                    <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster)}}>Add to Stack</Button>
+                    <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster); setIsAdded((isAdded) => (!isAdded))}}>Add to Stack</Button>
                   ) : (
                     <Button size="small" >Added</Button>
                   )}

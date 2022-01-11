@@ -15,7 +15,6 @@ import { Container } from "@mui/material";
 export default function RenderSearchResults({ searchObject, cardstackId, rerenderDelete, setRerenderDelete, apiKey }) {
     const [movies, setMovies] = useState([]);
     const [currentStackMovies, setCurrentStackMovies] = useState([])
-    const [isAdded, setIsAdded] = useState(true)
 
     useEffect(() => {
             fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchObject}`)
@@ -69,7 +68,9 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
             <div className='cardGroupSearch'>
             <Grid container spacing={4}>
                 {movies ? (movies.map((card) => (
-                  <SearchedMovies card={card}/>
+                  <SearchedMovies 
+                      card={card}
+                      handleAdd={handleAdd}/>
               // <Grid item key={card.id} xs={12} sm={6} md={4}>
               //   <Card
               //     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}

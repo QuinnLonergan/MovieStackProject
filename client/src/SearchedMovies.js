@@ -12,9 +12,6 @@ export default function SearchedMovies({handleAdd, movies, isAdded}){
 
 
     return (
-        <div className='cardGroupSearch'>
-        <Grid container spacing={4}>
-            {movies ? (movies.map((card) => (
           <Grid item key={card.id} xs={12} sm={6} md={4}>
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -38,8 +35,5 @@ export default function SearchedMovies({handleAdd, movies, isAdded}){
               </CardActions>
             </Card>
           </Grid>
-        ))) : <h1></h1>}
-      </Grid>
-        </div>
     )
 }

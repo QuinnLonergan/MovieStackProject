@@ -34,7 +34,6 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
     }, [rerenderDelete, cardstackId])
 
     function handleAdd(movieTitle, moviePoster){
-        setIsAdded((isAdded) => (!isAdded))
         fetch('/movies', {
                 method: "POST",
                 headers: {
@@ -86,7 +85,7 @@ export default function RenderSearchResults({ searchObject, cardstackId, rerende
                   />
                   <CardActions>
                   {isAdded ? (
-                        <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster)}}>Add to Stack</Button>
+                        <Button size="small" onClick={() => {handleAdd(card.Title, card.Poster); setIsAdded((isAdded) => (!isAdded))}}>Add to Stack</Button>
                       ) : (
                         <Button size="small" >Added</Button>
                       )}

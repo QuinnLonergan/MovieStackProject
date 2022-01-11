@@ -59,7 +59,7 @@ export default function CustomStacks() {
                   </CardContent>
                   <CardMedia
                     component="img"
-                    image={card.movies[0] && card.movies[8].poster ? (card.movies[8].poster) : "https://ih1.redbubble.net/image.1027712254.9762/fposter,small,wall_texture,product,750x1000.u2.jpg"}
+                    image={card.movies[0] && card.movies[0].poster ? (card.movies[0].poster) : "https://ih1.redbubble.net/image.1027712254.9762/fposter,small,wall_texture,product,750x1000.u2.jpg"}
                     alt="random"
                   />
                   <CardActions>

@@ -23,7 +23,6 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // Accept: "application/json"
             },
             body: JSON.stringify({
                 name: cardstackName,

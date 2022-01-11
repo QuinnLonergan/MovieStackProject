@@ -8,9 +8,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 
 
-export default function SearchedMovies({handleAdd, movies, isAdded}){
-
-
+export default function SearchedMovies({handleAdd, card, isAdded}){
     return (
           <Grid item key={card.id} xs={12} sm={6} md={4}>
             <Card

@@ -22,13 +22,36 @@ function App() {
     },
   });
 
+  // const lightTheme = createTheme({
+  //   palette: {
+  //     background: {
+  //       default: "#e4f0e2"
+  //     }
+  //   }
+  // });
+
+
   const lightTheme = createTheme({
     palette: {
+      type: 'light',
+      primary: {
+        main: 'rgba(0,0,0,0.52)',
+      },
+      secondary: {
+        main: '#fb8c00',
+      },
       background: {
-        default: "#e4f0e2"
-      }
-    }
-  });
+        default: '#e5ffe8',
+        paper: '#ffffff',
+      },
+      info: {
+        main: '#ff5722',
+      },
+      text: {
+        primary: 'rgba(0,0,0,0.87)',
+      },
+    },
+  })
 
   useEffect(() => {
     fetch("/me").then((r) => {

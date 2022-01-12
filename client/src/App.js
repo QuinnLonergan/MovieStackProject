@@ -23,39 +23,6 @@ function App() {
     },
   });
 
-  // const lightTheme = createTheme({
-  //   palette: {
-  //     background: {
-  //       default: "#e4f0e2"
-  //     }
-  //   }
-  // });
-// const darkTheme = createTheme({
-//   palette: {
-//     type: 'dark',
-//     primary: {
-//       main: '#303030',
-//       dark: '#9e9e9e',
-//       light: '#7d7d7d',
-//     },
-//     secondary: {
-//       main: '#81c784',
-//       contrastText: '#81c784',
-//     },
-//     background: {
-//       default: '#121212',
-//       paper: '#121212',
-//     },
-//     info: {
-//       main: '#ff5722',
-//     },
-//     text: {
-//       primary: '#ffffff',
-//     },
-//   },
-// })
-
-
   const lightTheme = createTheme({
     palette: {
       type: 'light',

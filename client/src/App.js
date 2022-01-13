@@ -34,7 +34,7 @@ function App() {
       },
       background: {
         default: '#e5ffe8',
-        paper: '#ffffff',
+        paper: '#f5f5f5',
       },
       info: {
         main: '#ff5722',

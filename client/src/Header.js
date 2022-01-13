@@ -24,6 +24,7 @@ import HelpIcon from '@mui/icons-material/Help';
 
 function Header({user, setUser, setLight, light}) {
   const [cards, setCards] = useState([])
+  const [id, setId] = useState(0)
 
     useEffect(() => {
         fetch(`/cardstacks`)
@@ -52,7 +53,8 @@ function Header({user, setUser, setLight, light}) {
 
   function randomStack(){
     if (cards.length > 0) {
-      getRandomInt(cards.length)
+      console.log(getRandomInt(cards.length))
+      setId(getRandomInt(cards.length))
     }
   }
 
@@ -88,7 +90,7 @@ function Header({user, setUser, setLight, light}) {
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>
-          <ListItemButton onClick={console.log("hello")} component={Link} to={`/stacks/${id}`} key={'Genre Stacks'}>
+          <ListItemButton onClick={randomStack} component={Link} to={`/stacks/${id}`} key={'Genre Stacks'}>
             <ListItemIcon>
               <HelpIcon />
             </ListItemIcon>

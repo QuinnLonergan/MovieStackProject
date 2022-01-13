@@ -18,6 +18,8 @@ import Drawer from '@mui/material/Drawer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import MovieIcon from '@mui/icons-material/Movie';
+import HelpIcon from '@mui/icons-material/Help';
+
 
 function Header({user, setUser, setLight, light}) {
 
@@ -70,9 +72,9 @@ function Header({user, setUser, setLight, light}) {
           </ListItemButton>
           <ListItemButton component={Link} to={'/genre'} key={'Genre Stacks'}>
             <ListItemIcon>
-              <MovieIcon />
+              <HelpIcon />
             </ListItemIcon>
-            <ListItemText primary={'Genre Stacks'} />
+            <ListItemText primary={'Random Stack'} />
           </ListItemButton>
       </List>
     </Box>

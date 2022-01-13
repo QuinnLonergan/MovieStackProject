@@ -46,11 +46,15 @@ function Header({user, setUser, setLight, light}) {
     setState({ ...state, [anchor]: open });
   };
 
-  // function randomStack(){
-  //   fetch(`/cardstacks`)
-  //     .then(response => response.json())
-  //     .then(data => setCards(data))
-  // }
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  function randomStack(){
+    if (cards.length > 0) {
+      getRandomInt(cards.length)
+    }
+  }
 
   const list = (anchor) => (
     <Box

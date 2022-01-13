@@ -68,6 +68,12 @@ function Header({user, setUser, setLight, light}) {
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>
+          <ListItemButton component={Link} to={'/genre'} key={'Genre Stacks'}>
+            <ListItemIcon>
+              <MovieIcon />
+            </ListItemIcon>
+            <ListItemText primary={'Genre Stacks'} />
+          </ListItemButton>
       </List>
     </Box>
   );

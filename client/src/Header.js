@@ -22,6 +22,13 @@ import HelpIcon from '@mui/icons-material/Help';
 
 
 function Header({user, setUser, setLight, light}) {
+  const [cards, setCards] = useState([])
+
+    useEffect(() => {
+        fetch(`/cardstacks`)
+          .then(response => response.json())
+          .then(data => setCards(data))
+      }, [])
 
   const [state, setState] = React.useState({
     top: false,

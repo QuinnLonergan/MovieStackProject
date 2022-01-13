@@ -38,6 +38,12 @@ function Header({user, setUser, setLight, light}) {
     setState({ ...state, [anchor]: open });
   };
 
+  // function randomStack(){
+  //   fetch(`/cardstacks`)
+  //     .then(response => response.json())
+  //     .then(data => setCards(data))
+  // }
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -70,7 +76,7 @@ function Header({user, setUser, setLight, light}) {
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>
-          <ListItemButton component={Link} to={'/genre'} key={'Genre Stacks'}>
+          <ListItemButton onClick={console.log("hello")} component={Link} to={'/genre'} key={'Genre Stacks'}>
             <ListItemIcon>
               <HelpIcon />
             </ListItemIcon>

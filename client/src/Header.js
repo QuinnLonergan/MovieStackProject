@@ -52,10 +52,10 @@ function Header({user, setUser, setLight, light}) {
   }
 
   function randomStack(){
-    if (cards.length > 0) {
+    // if (cards.length > 0) {
       console.log(getRandomInt(cards.length))
       setId(getRandomInt(cards.length))
-    }
+    // }
   }
 
   const list = (anchor) => (
@@ -90,8 +90,8 @@ function Header({user, setUser, setLight, light}) {
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>
-          <ListItemButton onClick={console.log("hello")} component={Link} to={`/stacks/${id}`} key={'Random Stack'}>
-            <ListItemIcon>
+          <ListItemButton onClick={randomStack} component={Link} to={`/stacks/${id}`} key={'Random Stack'}>
+            <ListItemIcon >
               <HelpIcon />
             </ListItemIcon>
             <ListItemText primary={'Random Stack'} />

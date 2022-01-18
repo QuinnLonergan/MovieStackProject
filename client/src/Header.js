@@ -30,7 +30,6 @@ function Header({user, setUser, setLight, light}) {
         fetch(`/cardstacks`)
           .then(response => response.json())
           .then(data => setCards(data))
-        randomStack()
       }, [])
 
   const [state, setState] = React.useState({

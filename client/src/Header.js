@@ -47,15 +47,16 @@ function Header({user, setUser, setLight, light}) {
     setState({ ...state, [anchor]: open });
   };
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
+  
 
   function randomStack(){
-    if (cards.length > 0) {
-      console.log(getRandomInt(cards.length))
-      setId(getRandomInt(cards.length))
-    }
+    let stackIds = []
+    cards.map(card => stackIds.push(card.id))
+
+    // if (cards.length > 0) {
+    //   console.log(getRandomInt(cards.length))
+    //   setId(getRandomInt(cards.length))
+    // }
   }
 
   const list = (anchor) => (

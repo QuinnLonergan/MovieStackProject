@@ -52,10 +52,10 @@ function Header({user, setUser, setLight, light}) {
   }
 
   function randomStack(){
-    // if (cards.length > 0) {
+    if (cards.length > 0) {
       console.log(getRandomInt(cards.length))
       setId(getRandomInt(cards.length))
-    // }
+    }
   }
 
   const list = (anchor) => (

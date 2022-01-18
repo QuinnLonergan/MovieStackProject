@@ -68,7 +68,7 @@ export default function CustomStacks() {
                   />
                   <CardActions>
                     <NavLink style={{ textDecoration: 'none' }} to={`/stacks/${card.id}`}>
-                        <Button onClick={console.log(card.id)}size="small" >Swipe</Button>
+                        <Button size="small" >Swipe</Button>
                     </NavLink>
                   </CardActions>
                 </Card>

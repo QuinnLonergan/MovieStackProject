@@ -24,7 +24,7 @@ import HelpIcon from '@mui/icons-material/Help';
 
 function Header({user, setUser, setLight, light}) {
   const [cards, setCards] = useState([])
-  const [id, setId] = useState(0)
+  const [randomId, setRandomId] = useState(0)
 
     useEffect(() => {
         fetch(`/cardstacks`)

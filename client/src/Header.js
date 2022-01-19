@@ -88,7 +88,7 @@ function Header({user, setUser, setLight, light}) {
             </ListItemIcon>
             <ListItemText primary={'Genre Stacks'} />
           </ListItemButton>
-          <ListItemButton component={Link} to={`/stacks/${id}`} key={'Random Stack'}>
+          <ListItemButton component={Link} to={`/stacks/${randomId}`} key={'Random Stack'}>
             <ListItemIcon >
               <HelpIcon />
             </ListItemIcon>

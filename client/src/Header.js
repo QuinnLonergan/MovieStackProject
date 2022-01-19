@@ -52,8 +52,8 @@ function Header({user, setUser, setLight, light}) {
 
   function randomStack(){
     let randomStackIds = []
-    cards.map(card => stackIds.push(card.id))
-    setRandomId(stackIds[Math.floor(Math.random() * stackIds.length)])
+    cards.map(card => randomStackIds.push(card.id))
+    setRandomId(randomStackIds[Math.floor(Math.random() * randomStackIds.length)])
   }
 
   const list = (anchor) => (

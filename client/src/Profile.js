@@ -14,9 +14,7 @@ import TextField from '@mui/material/TextField';
 
 
 
-export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete, renderName}) {
-    const [renderName, setRenderName] = useState('')
-
+export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete, setRenderName}) {
 
     function handleSubmit(){
         fetch('/cardstacks', {

@@ -13,6 +13,8 @@ function Main({apiKey}) {
     const [cardstackName, setCardstackName] = useState('')
     const [cardstackId, setCardstackId] = useState(0)
     const [rerenderDelete, setRerenderDelete] = useState(true)
+    const [renderName, setRenderName] = useState('')
+
 
 
 
@@ -43,6 +45,7 @@ function Main({apiKey}) {
                     cardstackName={cardstackName}
                     setRerenderDelete={setRerenderDelete}
                     rerenderDelete={rerenderDelete}
+                    setRenderName={setRenderName}
                     />
             </Route>
 
@@ -52,7 +55,8 @@ function Main({apiKey}) {
                     cardstackId={cardstackId}
                     setRerenderDelete={setRerenderDelete}
                     rerenderDelete={rerenderDelete}
-                    apiKey={apiKey}/>
+                    apiKey={apiKey}
+                    renderName={renderName}/>
             </Route>
 
             <Route exact path="/custom">

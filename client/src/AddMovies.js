@@ -16,15 +16,7 @@ import {useEffect} from 'react';
 
 export default function AddMovies({cardstackId, cardstackName, rerenderDelete, setRerenderDelete, apiKey, renderName}) {
     const [movieSearch, setMovieSearch] = useState("")
-    const [currentStack, setCurrentStack] = useState({})
 
-    // useEffect(() => {
-    //   fetch(`/cardstacks/${cardstackId}`)
-    //     .then(response => response.json())
-    //     .then(data => setCurrentStack(data))
-    // }, [])
-
-    // console.log(cardstackId)
 
 
   return (

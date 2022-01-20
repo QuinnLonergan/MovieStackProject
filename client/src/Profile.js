@@ -14,7 +14,7 @@ import TextField from '@mui/material/TextField';
 
 
 
-export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete}) {
+export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete, renderName}) {
     const [renderName, setRenderName] = useState('')
 
 
@@ -34,6 +34,7 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
                 setCardstackId(cardstack.id)
             })
         setRerenderDelete(rerenderDelete = !rerenderDelete)
+        setRenderName(cardstackName)
         setCardstackName('')
     }
 
@@ -50,7 +51,7 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
 
     function addToCard(id, name){
         setCardstackId(id) 
-        setCardstackName(name)
+        setRenderName(name)
     }
 
 

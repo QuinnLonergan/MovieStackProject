@@ -14,17 +14,17 @@ import {useEffect} from 'react';
 
 
 
-export default function AddMovies({cardstackId, cardstackName, rerenderDelete, setRerenderDelete, apiKey}) {
+export default function AddMovies({cardstackId, cardstackName, rerenderDelete, setRerenderDelete, apiKey, renderName}) {
     const [movieSearch, setMovieSearch] = useState("")
     const [currentStack, setCurrentStack] = useState({})
 
-    useEffect(() => {
-      fetch(`/cardstacks/${cardstackId}`)
-        .then(response => response.json())
-        .then(data => setCurrentStack(data))
-    }, [])
+    // useEffect(() => {
+    //   fetch(`/cardstacks/${cardstackId}`)
+    //     .then(response => response.json())
+    //     .then(data => setCurrentStack(data))
+    // }, [])
 
-    console.log(cardstackId)
+    // console.log(cardstackId)
 
 
   return (
@@ -44,7 +44,7 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
               align="center"
               color="text.primary"
             >
-              {`${currentStack.name}`}
+              {`${renderName}`}
             </Typography>
             <NavLink style={{ textDecoration: 'none' }} to={`/stacks/${cardstackId}`}>
                 <Button size="small" >SWIPE</Button>

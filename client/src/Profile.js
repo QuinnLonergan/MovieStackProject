@@ -34,6 +34,7 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
                 setCardstackId(cardstack.id)
             })
         setRerenderDelete(rerenderDelete = !rerenderDelete)
+        setCardstackName('')
     }
 
     function handleDelete(id){

@@ -9,6 +9,7 @@ import {useState } from 'react'
 import TextField from '@mui/material/TextField';
 import RenderSearchedMovies from './RenderSearchedMovies'
 import { NavLink } from 'react-router-dom';
+import {useEffect} from 'react';
 
 
 
@@ -18,7 +19,7 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
     const [currentStack, setCurrentStack] = useState([])
 
     useEffect(() => {
-      fetch(`/cardstacks/${id}`)
+      fetch(`/cardstacks/${cardstackId}`)
         .then(response => response.json())
         .then(data => setCurrentStack(data.movies))
     }, [])

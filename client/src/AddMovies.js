@@ -24,7 +24,7 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
         .then(data => setCurrentStack(data))
     }, [])
 
-    console.log(currentStack)
+    console.log(cardstackId)
 
 
   return (

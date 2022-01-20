@@ -15,11 +15,12 @@ import { NavLink } from 'react-router-dom';
 
 export default function AddMovies({cardstackId, cardstackName, rerenderDelete, setRerenderDelete, apiKey}) {
     const [movieSearch, setMovieSearch] = useState("")
+    const [currentStack, setCurrentStack] = useState([])
 
     useEffect(() => {
       fetch(`/cardstacks/${id}`)
         .then(response => response.json())
-        .then(data => setStackMovies(data.movies))
+        .then(data => setCurrentStack(data.movies))
     }, [])
 
 

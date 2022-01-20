@@ -23,6 +23,7 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
         .then(data => setCurrentStack(data.movies))
     }, [])
 
+    console.log(currentStack)
 
 
   return (
@@ -42,7 +43,7 @@ export default function AddMovies({cardstackId, cardstackName, rerenderDelete, s
               align="center"
               color="text.primary"
             >
-              {`${cardstackName}`}
+              {`${currentStack.name}`}
             </Typography>
             <NavLink style={{ textDecoration: 'none' }} to={`/stacks/${cardstackId}`}>
                 <Button size="small" >SWIPE</Button>

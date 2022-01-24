@@ -26,6 +26,7 @@ function Main({apiKey}) {
                 setCards(data.cardstacks)
             })
         }, [rerenderDelete])
+    
 
     function handleDelete(id){
         fetch(`/cardstacks/${id}`, {
@@ -35,7 +36,7 @@ function Main({apiKey}) {
                 "Content-Type": "application/json"
             }
         })
-        setRerenderDelete(rerenderDelete = !rerenderDelete)
+        setRerenderDelete(!rerenderDelete)
         console.log(rerenderDelete)
     }
 

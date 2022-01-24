@@ -37,7 +37,6 @@ function Main({apiKey}) {
             }
         })
         setRerenderDelete(!rerenderDelete)
-        console.log(rerenderDelete)
     }
 
 

@@ -45,6 +45,7 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
             }
         })
         setRerenderDelete(rerenderDelete = !rerenderDelete)
+        console.log(rerenderDelete)
     }
 
     function addToCard(id, name){

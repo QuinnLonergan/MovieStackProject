@@ -31,7 +31,7 @@ export default function Profile({handleDelete, user, cards, setCardstackName, se
         .then((cardstack) => {
                 setCardstackId(cardstack.id)
             })
-        setRerenderDelete(rerenderDelete = !rerenderDelete)
+        setRerenderDelete(!rerenderDelete)
         setRenderName(cardstackName)
         setCardstackName('')
     }

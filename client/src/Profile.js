@@ -14,7 +14,7 @@ import TextField from '@mui/material/TextField';
 
 
 
-export default function Profile({user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete, setRenderName}) {
+export default function Profile({handleDelete, user, cards, setCardstackName, setCardstackId, cardstackName, setRerenderDelete, rerenderDelete, setRenderName}) {
 
     function handleSubmit(){
         fetch('/cardstacks', {
@@ -36,17 +36,17 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
         setCardstackName('')
     }
 
-    function handleDelete(id){
-        fetch(`/cardstacks/${id}`, {
-            method: 'DELETE',
-            headers: {
-                Accept: 'application/json',
-                "Content-Type": "application/json"
-            }
-        })
-        setRerenderDelete(rerenderDelete = !rerenderDelete)
-        console.log(rerenderDelete)
-    }
+    // function handleDelete(id){
+    //     fetch(`/cardstacks/${id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             Accept: 'application/json',
+    //             "Content-Type": "application/json"
+    //         }
+    //     })
+    //     setRerenderDelete(rerenderDelete = !rerenderDelete)
+    //     console.log(rerenderDelete)
+    // }
 
     function addToCard(id, name){
         setCardstackId(id) 

@@ -27,6 +27,18 @@ function Main({apiKey}) {
             })
         }, [rerenderDelete])
 
+    function handleDelete(id){
+        fetch(`/cardstacks/${id}`, {
+            method: 'DELETE',
+            headers: {
+                Accept: 'application/json',
+                "Content-Type": "application/json"
+            }
+        })
+        setRerenderDelete(rerenderDelete = !rerenderDelete)
+        console.log(rerenderDelete)
+    }
+
 
 
     return(
@@ -46,6 +58,7 @@ function Main({apiKey}) {
                     setRerenderDelete={setRerenderDelete}
                     rerenderDelete={rerenderDelete}
                     setRenderName={setRenderName}
+                    handleDelete={handleDelete}
                     />
             </Route>
 

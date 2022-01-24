@@ -75,10 +75,6 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
             })
     }, [title]);
 
-    // function onFirstClick(){
-    //     console.log("Make new swipesession aaociated with user and cardstack")
-    //     console.log(movieid)
-    // }
 
     function onYesClick(){
         console.log(user)
@@ -112,9 +108,6 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
 
     function nextCard(){
         setTimeout(function(){ setCurrMov(currMov + 1) }, 300);
-                    // if (currMov === 0){
-                    //     onFirstClick()
-                    // }
         handleChange()
     }
 

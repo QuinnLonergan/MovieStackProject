@@ -86,7 +86,6 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // Accept: "application/json"
             },
             body: JSON.stringify({
                 liked: true,
@@ -102,7 +101,6 @@ function MovieCard({title, currMov, setCurrMov, movieid, apiKey}) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // Accept: "application/json"
             },
             body: JSON.stringify({
                 liked: false,

@@ -36,18 +36,6 @@ export default function Profile({handleDelete, user, cards, setCardstackName, se
         setCardstackName('')
     }
 
-    // function handleDelete(id){
-    //     fetch(`/cardstacks/${id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             Accept: 'application/json',
-    //             "Content-Type": "application/json"
-    //         }
-    //     })
-    //     setRerenderDelete(rerenderDelete = !rerenderDelete)
-    //     console.log(rerenderDelete)
-    // }
-
     function addToCard(id, name){
         setCardstackId(id) 
         setRenderName(name)

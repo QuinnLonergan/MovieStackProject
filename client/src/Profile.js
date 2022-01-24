@@ -45,7 +45,6 @@ export default function Profile({user, cards, setCardstackName, setCardstackId, 
             }
         })
         setRerenderDelete(rerenderDelete = !rerenderDelete)
-        setRerenderDelete(rerenderDelete = !rerenderDelete)
         console.log(rerenderDelete)
     }
 

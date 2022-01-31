@@ -15,7 +15,7 @@ class CardstacksController < ApplicationController
       cardstack = Cardstack.create!(cardstack_params)
       render json: cardstack, status: :created
     rescue ActiveRecord::RecordInvalid => invalid 
-      render json: {error: "invalid!"}, status: 422
+      render json: {error: "Invalid parameters"}, status: 422
     end
   
     def update

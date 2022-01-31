@@ -34,6 +34,7 @@ class CardstacksController < ApplicationController
       cardstacks = Cardstack.where(user_id: 3)
       render json: cardstacks
     end
+
   
   
     private

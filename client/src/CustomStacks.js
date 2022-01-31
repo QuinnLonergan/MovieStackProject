@@ -21,8 +21,6 @@ export default function CustomStacks() {
           .then(response => response.json())
           .then(data => setCards(data))
       }, [])
-
-
       
   return (
       <>

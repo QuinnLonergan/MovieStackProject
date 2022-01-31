@@ -98,8 +98,6 @@ function Header({user, setUser, setLight, light}) {
     </Box>
   );
 
-
-
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
           if (r.ok) {
@@ -109,7 +107,6 @@ function Header({user, setUser, setLight, light}) {
       }
 
       const anchor = 'left'
-
 
   return (
     <Box sx={{ flexGrow: 1 }}>

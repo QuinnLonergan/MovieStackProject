@@ -17,8 +17,6 @@ import {useEffect} from 'react';
 export default function AddMovies({cardstackId, rerenderDelete, setRerenderDelete, apiKey, renderName}) {
     const [movieSearch, setMovieSearch] = useState("")
 
-
-
   return (
       <>
       <main>

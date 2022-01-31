@@ -15,7 +15,7 @@ class VotesController < ApplicationController
       vote = Vote.create!(vote_params)
       render json: vote, status: :created
     rescue ActiveRecord::RecordInvalid => invalid 
-      render json: {error: "invalid!"}, status: 422
+      render json: {error: "Invalid parameters!"}, status: 422
     end
   
     def update

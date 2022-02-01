@@ -72,7 +72,7 @@ export default function CustomStacks() {
                 </Card>
               </Grid>
             ))) : <Typography gutterBottom variant="h5" component="h2">
-            NO CARDS
+            NO STACKS
           </Typography>}
           </Grid>
         </Container>

@@ -12,7 +12,7 @@ import { Divider } from '@mui/material';
 function InvitePage({returnLikedMovies, usersToCompare, setUsersToCompare, errors, resetVotes}){
     const [copied, setCopied] = useState(false);
 
-    // COPY CURRENT URL
+    // CODE TO COPY CURRENT URL
     function copy() {
         const el = document.createElement("input");
         el.value = window.location.href;
@@ -23,7 +23,7 @@ function InvitePage({returnLikedMovies, usersToCompare, setUsersToCompare, error
         setCopied(true);
     }
 
-    // COPY STATIC URL
+    // CODE TO COPY STATIC URL
     // function copy() {
     //     var el = document.createElement('textarea');
     //     el.value = "STATIC URL HERE";
